@@ -1,0 +1,22 @@
+{
+  "name": "node-cache-wrappe",
+  "version": "0.0.1",
+  "description": "Json Caching by wrappping function",
+  "main": "cache/index.js",
+  "scripts": {
+    "test": "mocha -R spec ./test/test.js"
+  },
+  "author": "Shrey Chaturvedi",
+  "license": "BSD",
+  "dependencies": {
+    "sigmund": "~1.0.0",
+    "lru-cache": "~2.3.1",
+    "debug": "*",
+    "redis": "*",
+    "object-hash": "^1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shreychaturvedi123/node-cache-wrapper.git"
+  }
+}
