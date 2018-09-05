@@ -1,4 +1,4 @@
-# wrap-cache (node-cache-wrapper)
+# wrap-cache (node-cache-wrapper) (Uses persistent cache with time stamp to serve stale data on data source failover)
 Cache wrapper in node js for wrapping your functions with fail-over data source handling to serve stale data from cache
 
 Currently 2 stores are supported.
