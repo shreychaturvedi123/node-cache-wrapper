@@ -192,7 +192,7 @@ var cache = {
             return cachedfunc;
         };
     },
-    debug: require('./debug')
+    debug: require('./cache/debug')
 
 };
 
