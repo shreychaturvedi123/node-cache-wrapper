@@ -5,7 +5,7 @@ var sigmund = require('sigmund');
 var log = require('debug')('scache');
 var util = require('util');
 var _ = require('lodash');
-var lru = require('./lru');
+var lru = require('./cache/lru');
 
 
 var hash = require('object-hash');
@@ -54,9 +54,9 @@ var cache = {
 
         if (options && options.redis) {
             log('creating a redis cache');
-            store = require('./redis').init(options);
+            store = require('./cache/redis').init(options);
         } else {
-            store = require('./lru').init(options);
+            store = require('./cache/lru').init(options);
         }
 
         if (!store) {
@@ -171,7 +171,7 @@ var cache = {
                                 that.expiry = that.failover_expiry;
 
                                 //save failed data
-                                store.set(key, res);
+                                if (res) store.set(key, res);
                             }
 
                         }

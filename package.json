@@ -2,7 +2,7 @@
   "name": "node-cache-wrappe",
   "version": "0.0.1",
   "description": "Json Caching by wrappping function",
-  "main": "cache/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha -R spec ./test/test.js"
   },
