@@ -1,6 +1,6 @@
 {
   "name": "wrap-cache",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Json Caching by wrappping function",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,9 @@
     "node-cache",
     "cahe-wrapper",
     "redis-node-cache",
-    "redis client node"
+    "redis client node",
+    "failover cache",
+    "fail cache"
   ],
   "repository": {
     "type": "git",
