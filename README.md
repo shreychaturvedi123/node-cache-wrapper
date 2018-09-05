@@ -1,4 +1,4 @@
-# node-cache-wrapper
+# wrap-cache (node-cache-wrapper)
 Cache wrapper in node js for wrapping your functions with fail-over data source handling to serve stale data from cache
 
 Currently 2 stores are supported.
@@ -12,7 +12,7 @@ Usage
 ------
 
 ```
-var node_cache_wrapper = require('node-cache-wrapper');
+var node_cache_wrapper = require('wrap-cache');
 
 // create a cache with max 10000 items and a TTL of 300 seconds
 
