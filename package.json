@@ -1,5 +1,5 @@
 {
-  "name": "node-cache-wrappe",
+  "name": "wrap-cache",
   "version": "0.0.1",
   "description": "Json Caching by wrappping function",
   "main": "index.js",
@@ -17,6 +17,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:shreychaturvedi123/node-cache-wrapper.git"
+    "url": "git@github.com:shreychaturvedi123/wrap-cache.git"
   }
 }
