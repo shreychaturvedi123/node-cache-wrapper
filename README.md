@@ -14,7 +14,6 @@ Usage
 ```
 var node_cache_wrapper = require('wrap-cache');
 
-// create a cache with max 10000 items and a TTL of 300 seconds
 
 var failoverCache =   node_cache_wrapper.debug.register(new node_cache_wrapper.Create({
             id: 2,
