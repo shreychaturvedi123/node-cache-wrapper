@@ -15,6 +15,13 @@
     "redis": "*",
     "object-hash": "^1.3.0"
   },
+  "keywords": [
+    "cache",
+    "node-cache",
+    "cahe-wrapper",
+    "redis-node-cache",
+    "redis client node"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:shreychaturvedi123/wrap-cache.git"
