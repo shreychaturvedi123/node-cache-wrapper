@@ -1,4 +1,4 @@
-# wrap-cache (node-cache-wrapper) (Uses persistent cache with time stamp to serve stale data on data source failover)
+# wrap-cache (Uses both persistent and ttl based cache with time stamp to serve stale data on data source failover)
 Cache wrapper in node js for wrapping your functions with fail-over data source handling to serve stale data from cache
 
 Currently 2 stores are supported.
@@ -18,9 +18,10 @@ var node_cache_wrapper = require('wrap-cache');
 var failoverCache =   node_cache_wrapper.debug.register(new node_cache_wrapper.Create({
             id: 2,
             expiry:  300,
-            failover_expiry:  30, // in secs
+            failover_expiry:  30, // in secs,
+            maxAge:600, //in secs (optional if not given ttl will be infinite)
             redis: {host:'localhost', port: 6379},
-            hash:  1 // for key hashing
+            hash:  1 // for key hashing(in case of long keys)
           }), 'failoverCache');
           
           

@@ -10,7 +10,7 @@ var redisStore = {
         var client;
         var prefix;
         var keylen = 0;
-        var maxAge = (options && options.maxAge) || 60000;
+        var maxAge = (options && options.maxAge) || -1;
         var port = options.redis.port;
         var host = options.redis.host;
         var ropts = {};
@@ -72,11 +72,23 @@ var redisStore = {
                     var obj = JSON.stringify(val);
 
                     debug('setting key ' + key + ' in redis');
-                    client.set(key, obj, function(err) {
-                        if (cb) {
-                            cb.apply(this, arguments);
-                        }
-                    });
+
+                    if (maxAge && maxAge > 0) {
+                        client.setex(key, maxAge, obj, function(err) {
+                            if (cb) {
+                                cb.apply(this, arguments);
+                            }
+                        });
+                    } else {
+                        //set persistent in redis
+                        client.set(key, obj, function(err) {
+                            if (cb) {
+                                cb.apply(this, arguments);
+                            }
+                        });
+                    }
+
+
                 } catch (err) {
                     if (cb) {
                         cb(err);

@@ -212,7 +212,7 @@ module.exports = cache;
 
 (function() {
     if (require.main === module) {
-
+        var store = {};
         // test function
         function test(a, b, cb) {
 
@@ -227,7 +227,8 @@ module.exports = cache;
         var cr = cache.debug.register(new cache.Create({
             id: 2,
             expiry: 300,
-            failover_expiry: 30,
+            failover_expiry: 30,    
+            maxAge: 600,//insecs
             redis: {
                 host: '127.0.0.1',
                 port: 6379
