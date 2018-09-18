@@ -163,7 +163,7 @@ var cache = {
 
                             if (that.failover_expiry) {
                                 //send failover response with increased ttl\
-                                data.ts = (new Date()).valueOf() + (that.failover_expiry * 1000);
+                                if(data) data.ts = (new Date()).valueOf() + (that.failover_expiry * 1000);
 
                                 res = data;
 
